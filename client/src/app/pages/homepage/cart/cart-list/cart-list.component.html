@@ -1,0 +1,65 @@
+<div class="cart-container" *ngIf="carts$ | async as carts">
+  <nz-empty
+    *ngIf="carts.length <= 0"
+    class="nz-empty"
+    [nzNotFoundContent]="'Cart is empty'"
+    nzNotFoundImage="simple"
+  ></nz-empty>
+
+  <nz-list nzItemLayout="vertical">
+    <nz-list-item *ngFor="let item of carts">
+      <nz-list-item-meta>
+        <nz-list-item-meta-title>
+          <span>{{ item.product.name }}</span>
+        </nz-list-item-meta-title>
+        <nz-list-item-meta-description [innerHTML]="item.product.description">
+        </nz-list-item-meta-description>
+      </nz-list-item-meta>
+      {{ item.totalPrice | currency }}
+      <ul nz-list-item-actions>
+        <nz-list-item-action>
+          <span
+            class="icon-delete"
+            nz-icon
+            nzType="minus"
+            nzTheme="outline"
+            style="margin-right: 8px"
+            (click)="updateCart(item, false)"
+          ></span>
+        </nz-list-item-action>
+        <nz-list-item-action>
+          <span style="margin-right: 8px">{{ item.quantity }}</span>
+        </nz-list-item-action>
+        <nz-list-item-action>
+          <span
+            class="icon-add"
+            nz-icon
+            nzType="plus"
+            nzTheme="outline"
+            style="margin-right: 8px"
+            (click)="updateCart(item)"
+          ></span>
+        </nz-list-item-action>
+      </ul>
+      <nz-list-item-extra>
+        <img
+          nz-image
+          width="272"
+          alt="logo"
+          nzSrc="{{ item.product.image.url }}"
+        />
+      </nz-list-item-extra>
+    </nz-list-item>
+  </nz-list>
+  <div class="footer" *ngIf="carts.length > 0">
+    <h3>
+      Subtotal: <span>{{ subtotal | currency }} </span>
+    </h3>
+    <div class="footer-divider">
+      <button nz-button nzType="primary" nzDanger (click)="emptyCart()">
+        Empty Cart
+      </button>
+      <button nz-button nzType="primary" (click)="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div nz-row class="product-container">
+  <nz-spin
+    *ngIf="!isProductsLoaded"
+    nzTip="Loading..."
+    class="spin"
+    nzSimple
+    [nzSize]="'large'"
+  ></nz-spin>
+
+  <nz-card
+    nz-col
+    *ngFor="let product of products$ | async"
+    class="card-container"
+    nzXs="20"
+    nzSm="16"
+    nzMd="12"
+    nzLg="8"
+    nzXl="4"
+    nzHoverable
+    style="width: 240px"
+    [nzCover]="coverTemplate"
+  >
+    <nz-card-meta
+      nzTitle="{{ product.name }}"
+      [nzDescription]="nzDescription"
+      class="card"
+    ></nz-card-meta>
+    <ng-template #coverTemplate>
+      <img nz-image alt="example" nzSrc="{{ product.image.url }}" />
+    </ng-template>
+    <ng-template #nzDescription>
+      <span [innerHTML]="product.description"></span>
+      <span
+        nz-icon
+        class="icon add-to-cart"
+        nzType="shopping-cart"
+        nzTheme="outline"
+        title="Add to Cart"
+        (click)="addToCart(product)"
+      ></span>
+    </ng-template>
+    <div class="price">
+      <span>{{ product.price.raw | currency }}</span>
+    </div>
+  </nz-card>
+</div>

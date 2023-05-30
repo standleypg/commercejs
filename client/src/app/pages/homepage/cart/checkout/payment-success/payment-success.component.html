@@ -1,0 +1,18 @@
+<div class="checkout-container">
+  <app-checkout-header [current]="1"></app-checkout-header>
+  <div style="padding: 30px">
+    <nz-card [nzBordered]="true">
+      <nz-result
+        nzStatus="success"
+        nzTitle="Thank you for your purchase, {{ username }}."
+        nzSubTitle="Order number: {{ orderNumber }}"
+      >
+        <div nz-result-extra>
+          <button nz-button nzType="primary" (click)="goToHomepage()">
+            Back to Dashboard
+          </button>
+        </div>
+      </nz-result>
+    </nz-card>
+  </div>
+</div>

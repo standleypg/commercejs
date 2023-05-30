@@ -1,0 +1,18 @@
+<nz-button-group
+  [nzSize]="'large'"
+  style="display: flex; justify-content: space-between"
+>
+  <button nz-button nzType="default" (click)="left()" *ngIf="leftButtonVisible">
+    <span nz-icon nzType="left"></span>
+    {{ leftButtonText }}
+  </button>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="right()"
+    *ngIf="rightButtonVisible"
+  >
+    {{ rightButtonText }}
+    <span nz-icon nzType="right"></span>
+  </button>
+</nz-button-group>

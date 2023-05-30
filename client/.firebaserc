@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "commersejs-proj": {
+      "hosting": {
+        "commercejs-project": [
+          "commersejs-proj"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "commersejs-proj"
+  }
+}

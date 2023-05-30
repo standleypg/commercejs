@@ -1,0 +1,21 @@
+<div class="container">
+  <!-- <span
+    class="logo"
+    nz-icon
+    nzType="fire"
+    nzTheme="twotone"
+    [nzTwotoneColor]="'#eb2f96'"
+  ></span> -->
+  <nz-divider class="title" nzText="MagicShopify"></nz-divider>
+  <div>
+    <button
+      nz-button
+      nzType="primary"
+      type="button"
+      (click)="authService.GoogleAuth()"
+    >
+      <span nz-icon class="icon" nzType="google" nzTheme="outline"></span>
+      Log in with Google
+    </button>
+  </div>
+</div>

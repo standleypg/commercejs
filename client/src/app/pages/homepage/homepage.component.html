@@ -1,0 +1,17 @@
+<div class="homepage">
+  <nav>
+    <span class="shop-title" routerLink="products">MagicShopify</span>
+    <nz-badge class="nz-badge" [nzCount]="cartsCount">
+      <span
+        routerLink="carts"
+        class="icon"
+        nz-icon
+        nzType="shopping"
+        nzTheme="twotone"
+        title="Cart"
+      ></span>
+    </nz-badge>
+    <app-logout></app-logout>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

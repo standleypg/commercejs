@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+nav {
+    font-size: 23px;
+    display: flex;
+    background-color: $primary;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+
+    .shop-title {
+        cursor: pointer;
+    }
+
+    .shop-title:hover {
+        color: $secondary;
+    }
+
+    .nz-badge {
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+    }
+
+}

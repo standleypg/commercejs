@@ -1,0 +1,25 @@
+<div class="checkout-container">
+  <app-checkout-header [current]="0"></app-checkout-header>
+  <div style="padding: 30px">
+    <nz-card
+      [nzBordered]="true"
+      nzTitle="Order Summary"
+      [nzExtra]="extraTemplate"
+    >
+      <!-- <app-payment-form
+        *ngIf="current === 0"
+        [validateForm]="validateForm"
+      ></app-payment-form> -->
+      <app-payment-details></app-payment-details>
+      <app-checkout-footer
+        [leftButtonText]="backButton"
+        [rightButtonText]="nextButton"
+        (leftButtonEvent)="back()"
+        (rightButtonEvent)="next()"
+      ></app-checkout-footer>
+    </nz-card>
+  </div>
+  <ng-template #extraTemplate>
+    <h3>Total Amount: {{ totalAmout | currency }}</h3>
+  </ng-template>
+</div>

@@ -1,0 +1,14 @@
+<nz-list>
+  <nz-list-item>
+    <h4>Product</h4>
+    <h4>Quantity<nz-divider nzType="vertical"></nz-divider>Amount</h4>
+  </nz-list-item>
+  <nz-list-item *ngFor="let cart of carts$ | async">
+    <span nz-typography>{{ cart.product.name }} </span>
+    <span>
+      {{ cart.quantity }}
+      <nz-divider nzType="vertical"></nz-divider>
+      {{ cart.totalPrice | currency }}
+    </span>
+  </nz-list-item>
+</nz-list>
