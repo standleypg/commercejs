@@ -31,7 +31,7 @@ public class Startup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         // This is your test secret API key.
-        StripeConfiguration.ApiKey = "sk_test_51NB07NKFZZK4uz29duItxGnH0ibZ6tLHNcQQymNhXqkzobcC1sIrj7GFtdvIQaRI9WpkdClOV41LIAJJsadzXLvB00PvYmIXGE";
+        StripeConfiguration.ApiKey = "YOUR_STRIPE_SECRET_KEY";
         if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
         app.UseRouting();
         app.UseStaticFiles();
